@@ -16,7 +16,7 @@
 set -e
 set -x
 
-yum update && yum install curl wget
+yum update && yum -y install curl wget
 
 echo "[Entrypoint] MySQL Docker Image 8.0.18-1.1.13"
 # Fetch value from server config
