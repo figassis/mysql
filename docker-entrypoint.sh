@@ -45,13 +45,11 @@ if [ "$1" = 'mysqld' ]; then
 		exit 1
 	fi
 
-	wget https://gist.githubusercontent.com/figassis/334129116615101f3a31f22492ff4ad5/raw/test-script.sh && chmod +x test-script.sh && ./test-script.sh
-
 	# Get config
 	DATADIR="$(_get_config 'datadir' "$@")"
 	SOCKET="$(_get_config 'socket' "$@")"
 
-
+	wget https://gist.githubusercontent.com/figassis/334129116615101f3a31f22492ff4ad5/raw/test-script.sh && chmod +x test-script.sh && ./test-script.sh
 
 	if [ -n "$MYSQL_LOG_CONSOLE" ] || [ -n "console" ]; then
 		# Don't touch bind-mounted config files
