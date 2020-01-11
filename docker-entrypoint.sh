@@ -60,7 +60,14 @@ if [ "$1" = 'mysqld' ]; then
 		fi
 	fi
 
+	ls -al $DATADIR
+	ls -al $DATADIR/mysql
+	ls -al /var/lib/mysql
+	ls -al /var/lib/mysql/mysql
+
 	if [ ! -d "$DATADIR/mysql" ]; then
+
+		echo "$DATADIR/mysql does not exist!"
 		# If the password variable is a filename we use the contents of the file. We
 		# read this first to make sure that a proper error is generated for empty files.
 		if [ -f "$MYSQL_ROOT_PASSWORD" ]; then
